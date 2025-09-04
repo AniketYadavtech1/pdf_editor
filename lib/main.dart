@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:pdf_editor/view/auth/ui/splace.dart';
 import 'package:pdf_editor/view/editor/provider/editor_provider.dart';
 import 'package:pdf_editor/view/pdf/provider/pdfprovider.dart';
-import 'package:pdf_editor/view/pdf/ui/pdf_screen.dart';
 import 'package:pdf_editor/view/settings/controller/theme_controller.dart';
 import 'package:provider/provider.dart';
+
+import 'view/auth/provider/auth_provider.dart';
 
 final scaffoldKey = GlobalKey<ScaffoldState>();
 Future<void> main() async {
@@ -26,6 +28,7 @@ Future<void> main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => ImagePdfProvider()),
         ChangeNotifierProvider(create: (_) => EditorProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
@@ -38,7 +41,7 @@ Future<void> main() async {
                 theme: themeController.themeData,
                 darkTheme: ThemeData.dark(),
                 themeMode: themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
-                home: ImagePdfScreen(),
+                home: SplashScreen(),
               ));
         },
       ),

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:open_file/open_file.dart';
+import 'package:pdf_editor/view/pdf/ui/getpdf_List.dart';
 import 'package:provider/provider.dart';
 
 import '../../components/common_button.dart';
@@ -41,6 +42,12 @@ class _ImagePdfScreenState extends State<ImagePdfScreen> {
       ),
       body: Column(
         children: [
+          CommonButton(
+            label: "pdfList",
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PdfViewScreen()));
+            },
+          ),
           AppHeights.h4,
           Padding(
             padding: const EdgeInsets.all(8.0),
