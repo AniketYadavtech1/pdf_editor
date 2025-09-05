@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pdf_editor/view/auth/ui/all_pdf.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -74,6 +75,11 @@ class WelcomeScreen extends StatelessWidget {
               },
               child: const Text("Rename PDF File"),
             ),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PdfListScreen()));
+                },
+                child: Text("allpdf")),
           ],
         ),
       ),
