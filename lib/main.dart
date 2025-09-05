@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:pdf_editor/view/auth/ui/splace.dart';
+import 'package:pdf_editor/view/auth/ui/permission.dart';
 import 'package:pdf_editor/view/editor/provider/editor_provider.dart';
 import 'package:pdf_editor/view/pdf/provider/pdfprovider.dart';
 import 'package:pdf_editor/view/settings/controller/theme_controller.dart';
@@ -41,7 +41,7 @@ Future<void> main() async {
                 theme: themeController.themeData,
                 darkTheme: ThemeData.dark(),
                 themeMode: themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
-                home: SplashScreen(),
+                home: WelcomeScreen(),
               ));
         },
       ),
