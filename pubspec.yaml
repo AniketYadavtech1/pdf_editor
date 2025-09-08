@@ -54,6 +54,9 @@ dependencies:
   provider: ^6.1.5+1
   media_scanner: ^2.2.0
   external_path: ^2.2.0
+  pdf_render: ^1.4.12
+
+
 
 
 

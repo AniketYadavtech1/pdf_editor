@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:pdf_editor/view/auth/ui/permission.dart';
+import 'package:pdf_editor/view/camera/component/pick_image.dart';
 import 'package:pdf_editor/view/editor/provider/editor_provider.dart';
 import 'package:pdf_editor/view/pdf/provider/pdfprovider.dart';
 import 'package:pdf_editor/view/settings/controller/theme_controller.dart';
 import 'package:provider/provider.dart';
 
 import 'view/auth/provider/auth_provider.dart';
+import 'view/camera/provider/camera_provider.dart';
 
 final scaffoldKey = GlobalKey<ScaffoldState>();
 Future<void> main() async {
@@ -29,6 +30,7 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (_) => ImagePdfProvider()),
         ChangeNotifierProvider(create: (_) => EditorProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => CameraProvider()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),
@@ -41,7 +43,7 @@ Future<void> main() async {
                 theme: themeController.themeData,
                 darkTheme: ThemeData.dark(),
                 themeMode: themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
-                home: WelcomeScreen(),
+                home: NewHomeScreen(),
               ));
         },
       ),
