@@ -113,6 +113,12 @@ class CameraProvider with ChangeNotifier {
     }
   }
 
+  void reorderPhotos(int oldIndex, int newIndex) {
+    final photo = allPhoto.removeAt(oldIndex);
+    allPhoto.insert(newIndex, photo);
+    notifyListeners();
+  }
+
   Future<void> renamePdf(PdfFileModel file, String newName) async {
     final f = File(file.path);
     final dir = f.parent.path;
